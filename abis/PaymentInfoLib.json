@@ -1,0 +1,710 @@
+{
+  "contractName": "PaymentInfoLib",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/Structs/PaymentInfo.sol\":\"PaymentInfoLib\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/Structs/PaymentInfo.sol\":{\"keccak256\":\"0x7a7392e2876568690092bd65dc66751cdfed8343944c9d1bec3e3e7679a59f67\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7f0db203efbcbe6fba03f1589bf988511cafb50055268dcec40ebf74e5556709\",\"dweb:/ipfs/QmVD2bQADheQGPW2uXwtv732JVfDYHtmrGY9WTEfBnDJkx\"]},\"project:/src/Token/IERC20.sol\":{\"keccak256\":\"0xb55c91551ef864f86edd296378fc3430f19798c0d1de468ff772a83a842df24c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f118e5d475795b9e612bb6c139db18493e65f47f181ddcef446f4fa43e7f80f5\",\"dweb:/ipfs/QmSRWmUWxpjp8jMtDHqWysWbZqFNVKAyLHcmBtjJRvmoLF\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122021bdf4fee544a87663a294c2f7b83da8f78a6ae8513d2061ae0998aa57576c2d64736f6c63430008000033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122021bdf4fee544a87663a294c2f7b83da8f78a6ae8513d2061ae0998aa57576c2d64736f6c63430008000033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "89:627:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "89:627:5:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\nimport \"../Token/IERC20.sol\";\n\nlibrary PaymentInfoLib{\n    struct PaymentInfo{\n        IERC20 token;\n        uint256 amount;\n        address from;\n        address to;\n        bool paidIn; //All values default to 0 (false)\n    }\n\n    // Adding constructors like this makes changes to the struct easier\n    function makePaymentInfo(IERC20 _token, uint256 a, address _from, address _to) pure internal returns(PaymentInfo memory){\n        PaymentInfo memory result;\n        result.token = _token;\n        result.amount = a;\n        result.from = _from;\n        result.to = _to;\n        return result;\n        // return PaymentInfo(_token, a, _from, _to);\n    }\n}",
+  "sourcePath": "/home/hardunel/work/projects/SCV/SmartContract/src/Structs/PaymentInfo.sol",
+  "ast": {
+    "absolutePath": "project:/src/Structs/PaymentInfo.sol",
+    "exportedSymbols": {
+      "IERC20": [
+        1705
+      ],
+      "PaymentInfoLib": [
+        1604
+      ]
+    },
+    "id": 1605,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1544,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:5"
+      },
+      {
+        "absolutePath": "project:/src/Token/IERC20.sol",
+        "file": "../Token/IERC20.sol",
+        "id": 1545,
+        "nodeType": "ImportDirective",
+        "scope": 1605,
+        "sourceUnit": 1706,
+        "src": "58:29:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 1604,
+        "linearizedBaseContracts": [
+          1604
+        ],
+        "name": "PaymentInfoLib",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PaymentInfoLib.PaymentInfo",
+            "id": 1557,
+            "members": [
+              {
+                "constant": false,
+                "id": 1548,
+                "mutability": "mutable",
+                "name": "token",
+                "nodeType": "VariableDeclaration",
+                "scope": 1557,
+                "src": "145:12:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_IERC20_$1705",
+                  "typeString": "contract IERC20"
+                },
+                "typeName": {
+                  "id": 1547,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 1546,
+                    "name": "IERC20",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 1705,
+                    "src": "145:6:5"
+                  },
+                  "referencedDeclaration": 1705,
+                  "src": "145:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20_$1705",
+                    "typeString": "contract IERC20"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1550,
+                "mutability": "mutable",
+                "name": "amount",
+                "nodeType": "VariableDeclaration",
+                "scope": 1557,
+                "src": "167:14:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1549,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "167:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1552,
+                "mutability": "mutable",
+                "name": "from",
+                "nodeType": "VariableDeclaration",
+                "scope": 1557,
+                "src": "191:12:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1551,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "191:7:5",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1554,
+                "mutability": "mutable",
+                "name": "to",
+                "nodeType": "VariableDeclaration",
+                "scope": 1557,
+                "src": "213:10:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1553,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "213:7:5",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1556,
+                "mutability": "mutable",
+                "name": "paidIn",
+                "nodeType": "VariableDeclaration",
+                "scope": 1557,
+                "src": "233:11:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1555,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "233:4:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "PaymentInfo",
+            "nodeType": "StructDefinition",
+            "scope": 1604,
+            "src": "117:168:5",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1602,
+              "nodeType": "Block",
+              "src": "483:231:5",
+              "statements": [
+                {
+                  "assignments": [
+                    1574
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1574,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1602,
+                      "src": "493:25:5",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_PaymentInfo_$1557_memory_ptr",
+                        "typeString": "struct PaymentInfoLib.PaymentInfo"
+                      },
+                      "typeName": {
+                        "id": 1573,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 1572,
+                          "name": "PaymentInfo",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 1557,
+                          "src": "493:11:5"
+                        },
+                        "referencedDeclaration": 1557,
+                        "src": "493:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PaymentInfo_$1557_storage_ptr",
+                          "typeString": "struct PaymentInfoLib.PaymentInfo"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1575,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "493:25:5"
+                },
+                {
+                  "expression": {
+                    "id": 1580,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 1576,
+                        "name": "result",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1574,
+                        "src": "528:6:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PaymentInfo_$1557_memory_ptr",
+                          "typeString": "struct PaymentInfoLib.PaymentInfo memory"
+                        }
+                      },
+                      "id": 1578,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "token",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1548,
+                      "src": "528:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IERC20_$1705",
+                        "typeString": "contract IERC20"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1579,
+                      "name": "_token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1560,
+                      "src": "543:6:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IERC20_$1705",
+                        "typeString": "contract IERC20"
+                      }
+                    },
+                    "src": "528:21:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$1705",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "id": 1581,
+                  "nodeType": "ExpressionStatement",
+                  "src": "528:21:5"
+                },
+                {
+                  "expression": {
+                    "id": 1586,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 1582,
+                        "name": "result",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1574,
+                        "src": "559:6:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PaymentInfo_$1557_memory_ptr",
+                          "typeString": "struct PaymentInfoLib.PaymentInfo memory"
+                        }
+                      },
+                      "id": 1584,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "amount",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1550,
+                      "src": "559:13:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1585,
+                      "name": "a",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1562,
+                      "src": "575:1:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "559:17:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1587,
+                  "nodeType": "ExpressionStatement",
+                  "src": "559:17:5"
+                },
+                {
+                  "expression": {
+                    "id": 1592,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 1588,
+                        "name": "result",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1574,
+                        "src": "586:6:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PaymentInfo_$1557_memory_ptr",
+                          "typeString": "struct PaymentInfoLib.PaymentInfo memory"
+                        }
+                      },
+                      "id": 1590,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "from",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1552,
+                      "src": "586:11:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1591,
+                      "name": "_from",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1564,
+                      "src": "600:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "586:19:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 1593,
+                  "nodeType": "ExpressionStatement",
+                  "src": "586:19:5"
+                },
+                {
+                  "expression": {
+                    "id": 1598,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 1594,
+                        "name": "result",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1574,
+                        "src": "615:6:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PaymentInfo_$1557_memory_ptr",
+                          "typeString": "struct PaymentInfoLib.PaymentInfo memory"
+                        }
+                      },
+                      "id": 1596,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "to",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1554,
+                      "src": "615:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1597,
+                      "name": "_to",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1566,
+                      "src": "627:3:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "615:15:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 1599,
+                  "nodeType": "ExpressionStatement",
+                  "src": "615:15:5"
+                },
+                {
+                  "expression": {
+                    "id": 1600,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1574,
+                    "src": "647:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PaymentInfo_$1557_memory_ptr",
+                      "typeString": "struct PaymentInfoLib.PaymentInfo memory"
+                    }
+                  },
+                  "functionReturnParameters": 1571,
+                  "id": 1601,
+                  "nodeType": "Return",
+                  "src": "640:13:5"
+                }
+              ]
+            },
+            "id": 1603,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "makePaymentInfo",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1567,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1560,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1603,
+                  "src": "388:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20_$1705",
+                    "typeString": "contract IERC20"
+                  },
+                  "typeName": {
+                    "id": 1559,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1558,
+                      "name": "IERC20",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1705,
+                      "src": "388:6:5"
+                    },
+                    "referencedDeclaration": 1705,
+                    "src": "388:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$1705",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1562,
+                  "mutability": "mutable",
+                  "name": "a",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1603,
+                  "src": "403:9:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1561,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "403:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1564,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1603,
+                  "src": "414:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1563,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1566,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1603,
+                  "src": "429:11:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1565,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "429:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "387:54:5"
+            },
+            "returnParameters": {
+              "id": 1571,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1570,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1603,
+                  "src": "464:18:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_PaymentInfo_$1557_memory_ptr",
+                    "typeString": "struct PaymentInfoLib.PaymentInfo"
+                  },
+                  "typeName": {
+                    "id": 1569,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1568,
+                      "name": "PaymentInfo",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1557,
+                      "src": "464:11:5"
+                    },
+                    "referencedDeclaration": 1557,
+                    "src": "464:11:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PaymentInfo_$1557_storage_ptr",
+                      "typeString": "struct PaymentInfoLib.PaymentInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "463:20:5"
+            },
+            "scope": 1604,
+            "src": "363:351:5",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1605,
+        "src": "89:627:5"
+      }
+    ],
+    "src": "33:683:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-11-11T04:23:58.745Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
